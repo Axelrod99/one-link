@@ -1,15 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router'
 import socials from '../../../../assets/images/socials.png'
 import phone from '../../../../assets/images/phone.png'
+import '../../../../App.css'
 // import { useNavigate } from 'react-router'
 
 const One = () => {
+
+  const navigate = useNavigate();
+
+  const HandleClick = (e) => {
+
+    navigate(
+      `/Signin`
+    )
+  }
+
+
   return (
     <div>
 
-      <div className='w-full flex flex-col md:flex-row p-5 sm:p-10 gap-[50px] md:gap-[20px] pb-[50px]'>
+      <section id='signin' className='w-full h-screen flex flex-col md:flex-row p-5 sm:p-10 gap-[50px] md:gap-[20px]'>
 
-        <div className='w-full flex flex-col gap-4 md:gap-6 justify-center'>
+        <div className='w-full flex flex-col gap-4 md:gap-6 justify-start'>
 
           <div className='flex font-semibold text-[36px] md:text-[42px] lg:text-[58px] xl:text-[64px]'>
             <p>Have <span className='text-[#4B1FC8]'>One</span>-link to everything</p>
@@ -19,20 +32,20 @@ const One = () => {
             <p>One-link makes it easy to discover and engage with media outlets, brands, businesses and influencers across the web. With One-link, you are truly everywhere you need to be.</p>
           </div>
 
-          <div className='gap-5 text-xs font-bold hidden md:flex'>
+          {/* <div className='gap-5 text-xs font-bold hidden md:flex'>
             <button className='bg-[#744fd9] text-white w-[100px] md:w-[150px] h-[40px] md:h-[50px] rounded-lg'>SIGN-UP</button>
             <button className='border border-[#744fd9] w-[100px] md:w-[150px] h-[40px] md:h-[50px] rounded-lg text-[#744fd9]'>HOW IT WORKS</button>
-          </div>
+          </div> */}
 
         </div>
 
-        <div className='w-full flex items-center justify-center'>
+        <div className='w-full flex items-start justify-center'>
           <div>
             <img className='' alt='first_picture' src={socials} />
           </div>
         </div>
 
-      </div>
+      </section>
 
 
 
@@ -61,13 +74,14 @@ const One = () => {
             </div>
 
             <div className='w-full flex justify-start lg:justify-end'>
-              <button className=' bg-[#4B1FC8] rounded-[12px] h-[51px] text-xs text-white w-full so:w-[85%]'>CREATE ACCOUNT</button>
+              <button onClick={HandleClick} className=' bg-[#4B1FC8] rounded-[12px] h-[51px] text-xs text-white w-full so:w-[85%]'>CREATE ACCOUNT</button>
             </div>
           </div>
 
         </div>
 
       </div>
+
 
     </div>
   )

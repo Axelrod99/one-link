@@ -1,6 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
+
 
 const Started = () => {
+  const navigate = useNavigate();
+
+  const HandleClick = (e) => {
+
+    navigate(
+      `/Signin`
+    )
+  }
+
   return (
     // <div className='flex flex-col gap-5 text-xs bg-[#4B1FC8] py-[140px] lg:py-[180px] text-white'>
     //   <p className='text-[39px] sm:text-[50px] lg:text-[64px] flex justify-center pb-[40px] font-semibold sm:font-bold '>Get started for free</p>
@@ -27,7 +38,7 @@ const Started = () => {
         {/* <p className='text-[#4B1FC8] text-[13px] sm:text-[18px] font-bold flex justify-end'>share URL</p> */}
 
         <div className='flex justify-center w-full'>
-          <button className='bg-[#200B5E] font-bold text-white w-[50%] h-[40px] md:h-[50px] rounded-lg'>CREATE ACCOUNT</button>
+          <button onClick={HandleClick} className='bg-[#200B5E] font-bold text-white w-[50%] h-[40px] md:h-[50px] rounded-lg'>CREATE ACCOUNT</button>
 
         </div>
       </div>
